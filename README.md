@@ -1,5 +1,5 @@
 # About
-This is a simple program that will let you set your Yahoo fantasy baseball lineup in advance by a number of a days you specify so you won't take L's from your opponents by default during that time.  Winning fantasy is hard even when you have your
+I am a diehard MLB fan.  This is a simple program that will let you set your Yahoo fantasy baseball lineup in advance by a number of a days you specify so you won't take L's from your opponents by default during that time.  Winning fantasy is hard even when you have your
 best baseball players play the best on the other team. 
 
 # Help and Ideas
