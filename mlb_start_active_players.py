@@ -12,15 +12,12 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 #@click.option('--teamname', prompt="Your teamname ", help="Name of your fantasy team that you want to set lineup for ")
 def start_active_players(days, username, password):
     
+    
     # Firefox
     profile = webdriver.FirefoxProfile()
     profile.accept_untrusted_certs = True
     browser = webdriver.Firefox(executable_path="/usr/local/bin/geckodriver", firefox_profile=profile)
-    '''
-    # Script only works if Chrome version is between 70 and 73
-    chrome_options = webdriver.ChromeOptions()
-    browser = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver", chrome_options=chrome_options)
-    '''
+
     browser.get('https://login.yahoo.com/config/login?.src=spt&.intl=us&.done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%3F.scrumb%3D0&specId=usernameRegWithName')
 
     browser.find_element_by_id('login-username').send_keys(username)
@@ -28,7 +25,19 @@ def start_active_players(days, username, password):
     time.sleep(2)
     browser.find_element_by_id('login-passwd').send_keys(password)
     browser.find_element_by_name('verifyPassword').click()
+    '''
+    # Chrome
+    chrome_options = webdriver.ChromeOptions()
+    browser = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver", chrome_options=chrome_options)
     
+    browser.get('https://login.yahoo.com/config/login?.src=spt&.intl=us&.done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%3F.scrumb%3D0&specId=usernameRegWithName')
+
+    browser.find_element_by_id('login-username').send_keys(username)
+    browser.find_element_by_id('login-signin').click()
+    time.sleep(2)
+    browser.find_element_by_id('login-passwd').send_keys(password)
+    browser.find_element_by_name('verifyPassword').click()
+    '''
 
     '''
     # locate hidden dropdown menu upon login to Yahoo Fantasy Baseball
